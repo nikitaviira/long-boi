@@ -2,75 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
   <title>YOUR MOMMA GAY</title>
-  <style>
-    html, body {
-      height: 100%;
-      background-image: url("https://ak.picdn.net/shutterstock/videos/1016092558/thumb/1.jpg");
-      background-repeat: no-repeat;
-      background-size: cover;
-      margin: 0;
-      padding: 0;
-    }
-    .crab-button {
-      background: transparent;
-      position: absolute;
-      top: 45%;
-      left: 45%;
-      margin-top: -50px;
-      margin-left: -50px;
-      width: 300px;
-      height: 300px;
-      border: 0;
-      outline: none;
-    }
-    .crab-image {
-      height: 300px;
-      width: 300px;
-    }
-    .fancy {
-      text-align: center;
-      font-weight: bold;
-      font-size: 3rem;
-      font-family: "Comic Sans MS", "Comic Sans", cursive;
-      padding-top: 10%;
-      width: 80%;
-      margin: 0 auto;
-    }
-    .long-boi-text-top {
-      text-align: center;
-      padding-top: 10%;
-      width: 80%;
-      margin: 0 auto;
-      font-family: "Comic Sans MS", "Comic Sans", cursive;
-      font-size: 4rem;
-      font-weight: bold;
-      letter-spacing: 15px;
-    }
-    .how {
-      position: absolute;
-      bottom: 15%;
-      left: 20%;
-      font-family: sans-serif;
-      font-size: 3rem;
-      transform: rotate(-15deg);
-      font-weight: bold;
-      text-align: center;
-      width: 100%;
-    }
-    .link {
-      position: absolute;
-      font-family: sans-serif;
-      font-size: 3rem;
-      font-weight: bold;
-      text-align: center;
-      width: 100%;
-      height: 90px;
-      color: blue;
-      background: white;
-      bottom: 0;
-    }
-  </style>
   <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 </head>
 <body>
@@ -86,14 +19,16 @@
   <div class="bottom-text" style="display: none">
     <p class="how">but how are he DO it 😳?</p>
     <a href="https://youtu.be/989-7xsRLR4?t=37" class="link">
-      <span style="font-style: italic; line-height: 75px">CLICC HERE TO FIND OUT!!</span>
+      <span class="link-text">CLICC HERE TO FIND OUT!!</span>
     </a>
   </div>
 </body>
 </html>
 
 <script type="text/javascript">
-  $(".crab-button").on('click', function() {
+  var crabButton = $(".crab-button");
+
+  crabButton.on('click', function() {
     $(".crab-image").fadeOut("slow", function() {
       $(this).on('load', function () {
         $(this).fadeIn(400, function () {
@@ -101,15 +36,9 @@
           $(".bottom-text").show();
         });
       });
-      onLongBoiLoad();
+      $(this).attr("src", "longboi.png");
+      $(this).add(crabButton).css({ width: "100%", left: 0 });
+      crabButton.off("click");
     })
   });
-
-  function onLongBoiLoad() {
-    $(".crab-image").attr("src","longboi.png");
-    $(".crab-image").css("width", "100%");
-    $(".crab-button").off("click");
-    $(".crab-button").css("width", "100%");
-    $(".crab-button").css({ left: 0 });
-  }
 </script>

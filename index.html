@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>YOUR MOMMA GAY</title>
+  <style>
+    html, body {
+      height: 100%;
+    }
+    .crab-button {
+      position: absolute;
+      top: 45%;
+      background: white;
+      left: 45%;
+      margin-top: -50px;
+      margin-left: -50px;
+      width: 300px;
+      height: 300px;
+      border: 0;
+      outline: none;
+    }
+    .crab-image {
+      height: 300px;
+      width: 300px;
+    }
+    .fancy {
+      background: linear-gradient(to right, #ef5350, #f48fb1, #7e57c2, #2196f3, #26c6da, #43a047, #eeff41, #f9a825, #ff5722);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-align: center;
+      font-size: 3rem;
+      font-family: "Comic Sans MS", "Comic Sans", cursive;
+      padding-top: 10%;
+      width: 80%;
+      margin: 0 auto;
+    }
+    .long-boi-text-top {
+      text-align: center;
+      padding-top: 10%;
+      width: 80%;
+      margin: 0 auto;
+      font-family: sans-serif;
+      font-size: 4rem;
+      font-weight: bold;
+      letter-spacing: 15px;
+    }
+    .how {
+      position: absolute;
+      bottom: 15%;
+      left: 20%;
+      font-family: sans-serif;
+      font-size: 3rem;
+      transform: rotate(-15deg);
+      font-weight: bold;
+      text-align: center;
+      width: 100%;
+    }
+    .link {
+      position: absolute;
+      bottom: 5%;
+      font-family: sans-serif;
+      font-size: 2rem;
+      font-weight: bold;
+      text-align: center;
+      width: 100%;
+    }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+</head>
+<body>
+  <div class="text">
+    <p class="fancy">What a fancy looking crab. I wonder what happens if you click him.</p>
+  </div>
+  <button class="crab-button">
+    <img
+        class="crab-image"
+        src="https://mrandmrscrabseafood.com/wp-content/uploads/2020/01/Crab_RED_01.png"
+        alt="" />
+  </button>
+  <div class="bottom-text" style="display: none">
+    <p class="how">but how are he DO it 😳?</p>
+    <a href="https://www.youtube.com/watch?v=oHg5SJYRHA0" class="link"><i>CLICC HERE TO FIND OUT!!</i></a>
+  </div>
+</body>
+</html>
+
+<script type="text/javascript">
+  $(".crab-button").on('click', function() {
+    $(".crab-image").fadeOut("slow", function() {
+      $(this).on('load', function () {
+        $(this).fadeIn(400, function () {
+          $(".text").html("<p class='long-boi-text-top'>He has become the <br>L O N G&nbsp;&nbsp;&nbsp;🅱️ O Y</p>")
+          $(".bottom-text").show();
+        });
+      });
+      onLongBoiLoad();
+    })
+  });
+
+  function onLongBoiLoad() {
+    $(".crab-image").attr("src","longboi.png");
+    $(".crab-button").off("click");
+  }
+</script>

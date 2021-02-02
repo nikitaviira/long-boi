@@ -7,13 +7,23 @@
   <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 </head>
 <body>
+  <form class="long-form" style="position: absolute;margin: 7%;bottom: 0;">
+    <label for="items" style="font-weight: bold;font-size: 2rem;font-family: 'Comic Sans MS', 'Comic Sans', cursive;">Choose your fighter</label>
+    <select name="items" id="items" style="display: flex;width: 100%;font-size: 1.5rem;
+    width: -moz-available;
+    width: -webkit-fill-available;
+    width: fill-available;height: 50px;">
+      <option value="crab" selected>Crab</option>
+      <option value="car">Car</option>
+    </select>
+  </form>
   <div class="text">
-    <p class="fancy">What a fancy looking crab. I wonder what happens if you click him.</p>
+    <p class="fancy">What a fancy looking crab. I wonder what happens if you on it.</p>
   </div>
   <button class="crab-button">
     <img
         class="crab-image"
-        src="https://mrandmrscrabseafood.com/wp-content/uploads/2020/01/Crab_RED_01.png"
+        src="crab.png"
         alt="" />
   </button>
   <div class="bottom-text" style="display: none">
@@ -22,23 +32,48 @@
       <span class="link-text">CLICC HERE TO FIND OUT!!</span>
     </a>
   </div>
+  <audio id="bruhsound" src="bruh.mp3" preload="auto" loop style="display:none;">
 </body>
 </html>
 
 <script type="text/javascript">
   var crabButton = $(".crab-button");
+  var selectList = $('select');
+  var pictures = {
+    'crab': {
+      short: 'crab.png',
+      long: 'longboi.png'
+    },
+    'car': {
+      short: 'car.png',
+      long: 'bus.png'
+    }
+  };
 
   crabButton.on('click', function() {
+    var sample = document.getElementById("bruhsound");
+    sample.volume = 0.2;
+    sample.play();
+
     $(".crab-image").fadeOut("slow", function() {
       $(this).on('load', function () {
         $(this).fadeIn(400, function () {
+          $(".fancy").show();
           $(".text").html("<p class='long-boi-text-top'>He has become the <br>L O N G&nbsp;&nbsp;&nbsp;🅱️ O Y</p>")
           $(".bottom-text").show();
         });
       });
-      $(this).attr("src", "longboi.png");
+
+      $(".fancy").hide();
+      $(this).attr("src", pictures[selectList.val()].long);
       $(this).add(crabButton).css({ width: "100%", left: 0 });
+      $(".long-form").hide();
       crabButton.off("click");
     })
+  });
+
+  selectList.on('change', function() {
+    $(".crab-image").attr("src", pictures[selectList.val()].short)
+    $(".fancy").text(`What a fancy looking ${selectList.val()}. I wonder what happens if you click on it.`)
   });
 </script>

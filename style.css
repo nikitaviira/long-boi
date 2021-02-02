@@ -9,18 +9,19 @@ html, body {
 .crab-button {
     background: transparent;
     position: absolute;
-    top: 45%;
-    left: 45%;
-    margin-top: -50px;
-    margin-left: -50px;
-    width: 300px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    width: 500px;
     height: 300px;
     border: 0;
     outline: none;
 }
 .crab-image {
     height: 300px;
-    width: 300px;
+    width: 500px;
 }
 .fancy {
     text-align: center;
